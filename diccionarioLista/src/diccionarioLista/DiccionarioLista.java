@@ -29,15 +29,17 @@ public class DiccionarioLista {
 			case 1:
 				System.out.println("Introduce el término:");
 				term=sc.next();
+				sc.nextLine();
 				System.out.println("Introduce la definición:");
-				def=sc.next();
+				def=sc.nextLine();
 				p=new Palabra(term, def);
 				diccionario.add(p);
 				break;
 			case 2:
 				for(Palabra t:diccionario) {
-					System.out.println(t.getTermino());
+					System.out.print(t.getTermino()+" ");
 				}
+				System.out.println();
 				break;
 			default:
 				System.out.println("Opción no válida");
