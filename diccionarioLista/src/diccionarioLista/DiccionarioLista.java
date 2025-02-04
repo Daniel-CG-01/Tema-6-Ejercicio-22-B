@@ -46,7 +46,6 @@ public class DiccionarioLista {
 			case 3:
 				System.out.println("¿De qué término quieres obtener su definición?");
 				term=sc.next();
-				
 				for (int i=0; i<diccionario.size(); i++) {
 					if (term.equals(diccionario.get(i).getTermino())) {
 						System.out.println("La definición de "+term+" es "+diccionario.get(i).getDefinicion());
@@ -57,11 +56,7 @@ public class DiccionarioLista {
 			case 4:
 				System.out.println("¿Qué término quieres eliminar junto con su definición?");
 				term=sc.next();
-				
 				Iterator<Palabra> iter=diccionario.iterator();
-				
-				
-				
 				while (iter.hasNext()) {
 					Palabra pal=iter.next();
 					
