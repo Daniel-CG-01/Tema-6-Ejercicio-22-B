@@ -1,6 +1,7 @@
 package diccionarioLista;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -11,6 +12,7 @@ public class DiccionarioLista {
 		System.out.println("2. Mostrar todos los términos (sin definiciones)");
 		System.out.println("3. Obtener definición");
 		System.out.println("4. Eliminar un término y su definición");
+		System.out.println("5. Salir");
 	}
 
 	public static void main(String[] args) {
@@ -41,10 +43,41 @@ public class DiccionarioLista {
 				}
 				System.out.println();
 				break;
+			case 3:
+				System.out.println("¿De qué término quieres obtener su definición?");
+				term=sc.next();
+				
+				for (int i=0; i<diccionario.size(); i++) {
+					if (term.equals(diccionario.get(i).getTermino())) {
+						System.out.println("La definición de "+term+" es "+diccionario.get(i).getDefinicion());
+					}
+				}
+				System.out.println();
+				break;
+			case 4:
+				System.out.println("¿Qué término quieres eliminar junto con su definición?");
+				term=sc.next();
+				
+				Iterator<Palabra> iter=diccionario.iterator();
+				
+				
+				
+				while (iter.hasNext()) {
+					Palabra pal=iter.next();
+					
+					if (term.equals(pal.getTermino())) {
+						iter.remove();
+					}
+				}
+				System.out.println();
+				break;
+			case 5:
+				System.out.println("Has salido");
+				break;
 			default:
 				System.out.println("Opción no válida");
 			}
-		}while(opc!=0);
+		}while(opc!=5);
 		
 	}
 
