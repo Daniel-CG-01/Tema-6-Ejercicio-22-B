@@ -13,6 +13,7 @@ public class DiccionarioLista {
 		System.out.println("3. Obtener definición");
 		System.out.println("4. Eliminar un término y su definición");
 		System.out.println("5. Salir");
+		System.out.println("------------------------------------------------");
 	}
 
 	public static void main(String[] args) {
